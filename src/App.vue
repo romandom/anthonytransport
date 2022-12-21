@@ -19,15 +19,39 @@
       <div
         class="flex flex-row 2xl:text-3xl xl:text-2xl lg:text-xl text-anthony-white font-semibold gap-4 mt-[2%] w-[50%] lg:ml-[-15%]"
       >
-        <div class="hover:cursor-pointer" @click="scroll('About')">O NAS</div>
-        <div class="hover:cursor-pointer" @click="scroll('Services')">
+        <div
+          class="hover:cursor-pointer"
+          :class="about ? 'underline' : ''"
+          @click="scroll('About')"
+        >
+          O NAS
+        </div>
+        <div
+          class="hover:cursor-pointer"
+          :class="services ? 'underline' : ''"
+          @click="scroll('Services')"
+        >
           SLUZBY
         </div>
-        <div class="hover:cursor-pointer" @click="scroll('Team')">NAS TYM</div>
-        <div class="hover:cursor-pointer" @click="scroll('Vehicles')">
+        <div
+          class="hover:cursor-pointer"
+          :class="team ? 'underline' : ''"
+          @click="scroll('Team')"
+        >
+          NAS TYM
+        </div>
+        <div
+          class="hover:cursor-pointer"
+          :class="vehicles ? 'underline' : ''"
+          @click="scroll('Vehicles')"
+        >
           GARAZ
         </div>
-        <div class="hover:cursor-pointer" @click="scroll('Contact')">
+        <div
+          class="hover:cursor-pointer"
+          :class="contact ? 'underline' : ''"
+          @click="scroll('Contact')"
+        >
           KONTAKT
         </div>
       </div>
@@ -87,7 +111,7 @@
       <OfferComponent />
     </section>
     <section
-      @scroll="handleScroll"
+      @scroll="handleScroll()"
       id="Team"
       class="bg-anthony-white-darker h-[1284px] flex flex-col px-[5%]"
     >
@@ -138,14 +162,68 @@ export default {
     return {
       shrink: false,
       lastScrollPosition: 0,
+      contact: false,
+      contactStart: 0,
+      contactEnd: 0,
+      services: false,
+      servicesStart: 0,
+      servicesEnd: 0,
+      about: false,
+      aboutStart: 0,
+      aboutEnd: 0,
+      team: false,
+      teamStart: 0,
+      teamEnd: 0,
+      vehicles: false,
+      vehiclesStart: 0,
+      vehiclesEnd: 0,
     };
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
-
     window.addEventListener("scroll", this.onScroll);
   },
+  mounted() {
+    this.getPos();
+  },
   methods: {
+    getPos() {
+      this.contactStart = document
+        .getElementById("Contact")
+        .getBoundingClientRect().top;
+      this.contactEnd = document
+        .getElementById("Contact")
+        .getBoundingClientRect().bottom;
+
+      this.servicesStart = document
+        .getElementById("Services")
+        .getBoundingClientRect().top;
+      this.servicesEnd = document
+        .getElementById("Services")
+        .getBoundingClientRect().bottom;
+
+      this.aboutStart = document
+        .getElementById("About")
+        .getBoundingClientRect().top;
+      this.aboutEnd = document
+        .getElementById("About")
+        .getBoundingClientRect().bottom;
+
+      this.vehiclesStart = document
+        .getElementById("Vehicles")
+        .getBoundingClientRect().top;
+      this.vehiclesEnd = document
+        .getElementById("Vehicles")
+        .getBoundingClientRect().bottom;
+
+      this.teamStart = document
+        .getElementById("Team")
+        .getBoundingClientRect().top;
+      this.teamEnd = document
+        .getElementById("Team")
+        .getBoundingClientRect().bottom;
+      console.log(this.teamStart);
+    },
     onScroll() {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop;
@@ -165,12 +243,57 @@ export default {
       element.scrollIntoView({ behavior: "smooth" });
     },
     handleScroll() {
-      const top = document.getElementById("Team").getBoundingClientRect().top;
-      const bottom = document
-        .getElementById("Team")
-        .getBoundingClientRect().bottom;
-      console.log(top);
-      console.log(bottom);
+      const currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+      if (
+        currentScrollPosition > this.contactStart &&
+        currentScrollPosition < this.contactEnd
+      ) {
+        this.contact = true;
+        this.services = false;
+        this.about = false;
+        this.team = false;
+        this.vehicles = false;
+      }
+      if (
+        currentScrollPosition > this.aboutStart &&
+        currentScrollPosition < this.aboutEnd
+      ) {
+        this.contact = false;
+        this.services = false;
+        this.about = true;
+        this.team = false;
+        this.vehicles = false;
+      } else if (
+        currentScrollPosition > this.servicesStart &&
+        currentScrollPosition < this.servicesEnd
+      ) {
+        this.contact = false;
+        this.services = true;
+        this.about = false;
+        this.team = false;
+        this.vehicles = false;
+      }
+      if (
+        currentScrollPosition > this.teamStart &&
+        currentScrollPosition < this.teamEnd
+      ) {
+        this.contact = false;
+        this.services = false;
+        this.about = false;
+        this.team = true;
+        this.vehicles = false;
+      }
+      if (
+        currentScrollPosition > this.vehiclesStart &&
+        currentScrollPosition < this.vehiclesEnd
+      ) {
+        this.contact = false;
+        this.services = false;
+        this.about = false;
+        this.team = false;
+        this.vehicles = true;
+      }
     },
   },
 };

@@ -27,4 +27,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.footer-center {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+</style>
