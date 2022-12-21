@@ -2,7 +2,9 @@
   <div
     class="w-full h-[10%] bg-anthony-red mt-[8%] flex place-items-center font-sans"
   >
-    <h2 class="2xl:text-7xl xl:text-6xl text-anthony-white ml-[13%]">
+    <h2
+      class="2xl:text-7xl xl:text-6xl lg:text-5xl text-anthony-white ml-[13%]"
+    >
       Vozovy park
     </h2>
   </div>
