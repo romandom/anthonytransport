@@ -1,141 +1,171 @@
+<link rel="stylesheet" href="main.css">
 <template>
-  <body
-    id="grad"
-    class="xl:h-[4458px] 2xl:h-[5573px] lg:h-[4200px] md:h-[2853px] sm:h-[2282px] xs:h-[1825px] font-sans"
+  <nav
+    class="sticky-top flex flex-row bg-color xs:justify-between lg:justify-start"
   >
-    <nav class="sticky-top flex flex-row bg-color">
-      <div class="mt-[7%] ml-[5%] w-[45%]">
+    <div class="mt-[7%] ml-[5%] xs:w-[60%] lg:w-[45%]">
+      <img
+        id="logo"
+        class="w-[100%]"
+        :class="
+          this.shrink
+            ? 'lg:scale-[0.35] lg:transition lg:duration-1000 lg:translate-y-[-80%] lg:translate-x-[-25%]'
+            : 'lg:scale-100 lg:transition lg:duration-1000'
+        "
+        src="@/assets/logo_white.svg"
+      />
+    </div>
+    <div class="xs:flex xs:flex-col lg:hidden mt-[10%] mr-[5%]">
+      <img src="@/assets/objects/menu_line.svg" />
+      <img class="my-[15%]" src="@/assets/objects/menu_line.svg" />
+      <img src="@/assets/objects/menu_line.svg" />
+    </div>
+    <div
+      class="lg:flex flex-row 2xl:text-3xl xl:text-2xl lg:text-xl text-anthony-white font-semibold gap-4 mt-[2%] w-[50%] lg:ml-[-15%] xs:hidden"
+    >
+      <div
+        class="hover:cursor-pointer"
+        :class="about ? 'underline' : ''"
+        @click="scroll('About')"
+      >
+        O NAS
+      </div>
+      <div
+        class="hover:cursor-pointer"
+        :class="services ? 'underline' : ''"
+        @click="scroll('Services')"
+      >
+        SLUZBY
+      </div>
+      <div
+        class="hover:cursor-pointer"
+        :class="team ? 'underline' : ''"
+        @click="scroll('Team')"
+      >
+        NAS TYM
+      </div>
+      <div
+        class="hover:cursor-pointer"
+        :class="vehicles ? 'underline' : ''"
+        @click="scroll('Vehicles')"
+      >
+        GARAZ
+      </div>
+      <div
+        class="hover:cursor-pointer"
+        :class="contact ? 'underline' : ''"
+        @click="scroll('Contact')"
+      >
+        KONTAKT
+      </div>
+    </div>
+    <div class="xs:hidden lg:flex flex-row mt-[2.5%] gap-4">
+      <div>
         <img
-          id="logo"
-          class="w-[100%]"
-          :class="
-            this.shrink
-              ? 'scale-[0.35] transition duration-1000 translate-y-[-80%] translate-x-[-25%]'
-              : 'scale-100 transition duration-1000'
-          "
-          src="@/assets/logo_white.svg"
+          class="hover:cursor-pointer hover:border-2 hover:rounded-md"
+          src="@/assets/flags/slovak.svg"
         />
       </div>
-      <div
-        class="flex flex-row 2xl:text-3xl xl:text-2xl lg:text-xl text-anthony-white font-semibold gap-4 mt-[2%] w-[50%] lg:ml-[-15%]"
-      >
-        <div
-          class="hover:cursor-pointer"
-          :class="about ? 'underline' : ''"
-          @click="scroll('About')"
-        >
-          O NAS
-        </div>
-        <div
-          class="hover:cursor-pointer"
-          :class="services ? 'underline' : ''"
-          @click="scroll('Services')"
-        >
-          SLUZBY
-        </div>
-        <div
-          class="hover:cursor-pointer"
-          :class="team ? 'underline' : ''"
-          @click="scroll('Team')"
-        >
-          NAS TYM
-        </div>
-        <div
-          class="hover:cursor-pointer"
-          :class="vehicles ? 'underline' : ''"
-          @click="scroll('Vehicles')"
-        >
-          GARAZ
-        </div>
-        <div
-          class="hover:cursor-pointer"
-          :class="contact ? 'underline' : ''"
-          @click="scroll('Contact')"
-        >
-          KONTAKT
-        </div>
+      <div>
+        <img
+          class="hover:cursor-pointer hover:border-2 hover:rounded-md"
+          src="@/assets/flags/english.svg"
+        />
       </div>
-      <div class="flex flex-row mt-[2.5%] gap-4">
-        <div>
-          <img
-            class="hover:cursor-pointer hover:border-2 hover:rounded-md"
-            src="@/assets/flags/slovak.svg"
-          />
-        </div>
-        <div>
-          <img
-            class="hover:cursor-pointer hover:border-2 hover:rounded-md"
-            src="@/assets/flags/english.svg"
-          />
-        </div>
-        <div class="hover:cursor-pointer">
-          <img
-            class="hover:cursor-pointer hover:border-2 hover:rounded-md"
-            src="@/assets/flags/german.svg"
-          />
-        </div>
+      <div class="hover:cursor-pointer">
+        <img
+          class="hover:cursor-pointer hover:border-2 hover:rounded-md"
+          src="@/assets/flags/german.svg"
+        />
       </div>
-    </nav>
-    <section id="About" class="2xl:h-[1390px]">
-      <div class="flex flex-row ml-[9.5%] mt-[3%]">
-        <div>
-          <img src="@/assets/objects/dash.svg" />
-        </div>
-        <div class="mx-[2%]">
-          <img src="@/assets/objects/dash.svg" />
-        </div>
-        <div>
-          <img src="@/assets/objects/dash.svg" />
-        </div>
+    </div>
+  </nav>
+  <section class="grad h-[931px] mt-[-20%]">
+    <div class="flex flex-row ml-[9.5%]">
+      <div class="mt-[24%]">
+        <img
+          class="xs:block lg:hidden"
+          src="@/assets/objects/dash_mobile.svg"
+        />
+        <img class="xs:hidden lg:block" src="@/assets/objects/dash.svg" />
       </div>
-      <div
-        class="flex-col text-anthony-white 2xl:text-4xl xl:text-3xl lg:text-2xl font-bold font-sans ml-[9.5%] mt-[2%]"
-      >
-        <h1>Medzinarodna a</h1>
-        <h1>vnutrostatna</h1>
-        <h1>preprava</h1>
+      <div class="xs:mx-[6%] lg:mx-[2%] mt-[24%]">
+        <img
+          class="xs:block lg:hidden"
+          src="@/assets/objects/dash_mobile.svg"
+        />
+        <img class="xs:hidden lg:block" src="@/assets/objects/dash.svg" />
       </div>
-      <div class="mt-[25%]">
-        <img src="@/assets/objects/red_dash.svg" class="dash-center" />
+      <div  class="mt-[24%]">
+        <img
+          class="xs:block lg:hidden"
+          src="@/assets/objects/dash_mobile.svg"
+        />
+        <img class="xs:hidden lg:block" src="@/assets/objects/dash.svg" />
       </div>
-      <div
-        class="flex flex-row class 2xl:text-xl xl:text-lg lg:text-base text-anthony-white justify-content-around mx-[12%] mt-[3%]"
-      >
-        <AboutComponent />
-      </div>
-    </section>
-    <section
-      id="Services"
-      class="bg-anthony-white mt-[5%] h-[790px] flex flex-row justify-content-center pl-[5%]"
+    </div>
+    <div
+      class="flex-col text-anthony-white font-bold font-sans ml-[9.5%] xs:mt-[5%] lg:mt-[2%]"
     >
-      <OfferComponent />
-    </section>
-    <section
-      @scroll="handleScroll()"
-      id="Team"
-      class="bg-anthony-white-darker h-[1284px] flex flex-col px-[5%]"
+      <h1 class="xs:text-base 2xl:text-5xl xl:text-4xl lg:text-3xl">
+        Medzinarodna a
+      </h1>
+      <h1
+        class="xs:text-base 2xl:text-5xl xl:text-4xl lg:text-3xl xs:mt-[-4%] lg:mt-0 xs:mb-[-2%] lg:mb-0"
+      >
+        vnutrostatna
+      </h1>
+      <h1 class="xs:text-base 2xl:text-5xl xl:text-4xl lg:text-3xl">
+        preprava
+      </h1>
+    </div>
+  </section>
+  <section id="About" class="2xl:h-[400px] xl:h-[320px] lg:h-[300px] bg-black">
+    <div class="">
+      <img src="@/assets/objects/red_dash.svg" class="dash-center" />
+    </div>
+    <div
+      class="flex xs:flex-col lg:flex-row class 2xl:text-xl xl:text-lg lg:text-base text-anthony-white justify-content-around xs:ml-[12%] lg:ml-0 xs:mr-[5%] lg:mr-0 lg:mx-[12%] xs:mt-[8%] lg:mt-[3%]"
     >
-      <CareerComponent />
-    </section>
-    <section id="Vehicles" class="bg-anthony-white h-[969px] flex flex-col">
-      <VehiclesComponent />
-    </section>
-    <section
-      id="Contact"
-      class="bg-anthony-white-darker h-[985px] flex flex-row"
+      <AboutComponent />
+    </div>
+  </section>
+
+  <section
+    id="Services"
+    class="bg-anthony-white mt-[5%] xl:h-[790px] lg:h-[730px] flex xs:flex-col lg:flex-row lg:justify-content-center lg:pl-[5%]"
+  >
+    <OfferComponent />
+  </section>
+  <section
+    @scroll="handleScroll()"
+    id="Team"
+    class="bg-anthony-white-darker xl:h-[1284px] lg:h-[1100px] flex flex-col px-[5%]"
+  >
+    <CareerComponent />
+  </section>
+  <section id="Vehicles" class="bg-anthony-white h-[969px] flex flex-col">
+    <VehiclesComponent />
+  </section>
+  <section
+    id="Contact"
+    class="bg-anthony-white-darker lg:h-[700px] xl:h-[850px] 2xl:h-[985px] flex xs:flex-col lg:flex-row"
+  >
+    <ContactComponent />
+    <div
+      class="flex flex-col xs:w-[100%] lg:w-[40%] xs:text-center lg:text-start lg:ml-[8%] mt-[15%]"
     >
-      <ContactComponent />
-      <div class="flex flex-col w-[40%] ml-[8%] mt-[15%]">
-        <h4 class="2xl:text-[35px] xl:text-[30px] lg:text-[25px] mb-[6%]">
-          Formular <span class="text-anthony-red">nezavazneho dopytu</span>
-        </h4>
-        <div class="flex flex-row justify-between">
-          <FormComponent />
-        </div>
+      <h4
+        class="2xl:text-[35px] xl:text-[30px] lg:text-[25px] xs:text-[22px] mb-[6%]"
+      >
+        Formular <span class="text-anthony-red">nezavazneho dopytu</span>
+      </h4>
+      <div class="flex flex-row justify-between">
+        <FormComponent />
       </div>
-    </section>
-    <FooterComponent />
-  </body>
+    </div>
+  </section>
+  <FooterComponent />
 </template>
 
 <script>
@@ -300,38 +330,38 @@ export default {
 </script>
 
 <style scoped>
-#grad {
+.grad {
   background: linear-gradient(
-      179.84deg,
-      #b90000 0.66%,
-      #630000 9.46%,
-      #530404 12.67%,
-      #050505 15.02%
+      180deg,
+      #b90010 18.39%,
+      #630000 46.79%,
+      #530404 59.56%,
+      #050505 68.88%
     ),
     #ffffff;
 }
 .dash-center {
   margin-inline: auto;
 }
-.bg-color {
-  background: linear-gradient(
-    180deg,
-    #b90000 0%,
-    #ae0000 32%,
-    transparent 0,
-    transparent 100%
-  );
+@media only screen and (min-width: 1024px) {
+  .bg-color {
+    background: linear-gradient(
+      180deg,
+      #b90000 0%,
+      #b70000 32%,
+      transparent 0,
+      transparent 100%
+    );
+  }
 }
-.footer-center {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-.logo {
-  position: fixed;
-  transform: translate3d(0, 0, 0);
-  transition: 0.1s all ease-out;
-}
-.logo.logo--hidden {
-  width: 50%;
+@media only screen and (max-width: 1023px) {
+  .bg-color {
+    background: linear-gradient(
+      180deg,
+      #bc0000 0%,
+      #b80000 44.75%,
+      #9a0000 99.99%
+    );
+  }
 }
 </style>
