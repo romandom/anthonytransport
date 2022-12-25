@@ -1,6 +1,6 @@
 <template>
-  <form ref="form" class="flex flex-col w-[80%] font-sans" v-if="!clicked">
-    <div class="mr-[10%]">
+  <form ref="form" class="flex flex-col lg:w-[80%] font-sans" v-if="!clicked">
+    <div class="xs:mx-auto lg:mx-0 lg:mr-[10%]">
       <label for="lname" class="font-[600] mb-[1%]">Meno a priezvisko</label>
       <input
         type="text"
@@ -11,8 +11,8 @@
         class="block bg-white w-full border-[1.5px] shadow-sm focus:outline-none focus:ring-1 py-[1.5%] pl-[10px]"
       />
     </div>
-    <div class="flex flex-row mt-[2%] justify-content-between">
-      <div class="w-[45%]">
+    <div class="flex xs:flex-col lg:flex-row mt-[2%] justify-content-between">
+      <div class="lg:w-[45%] xs:mx-auto lg:mx-0">
         <label for="name" class="font-[600] mb-[1%]">Email</label>
         <input
           required

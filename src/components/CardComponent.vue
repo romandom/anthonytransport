@@ -5,12 +5,12 @@
   >
     <img class="mt-[6%] mx-auto w-[90%]" :src="require('@/assets/photo.svg')" />
     <h3
-      class="text-anthony-red font-semibold 2xl:text-[28px] xl:text-[24px] lg:text-[20px] mt-[3%] ml-[5%]"
+      class="text-anthony-red font-semibold 2xl:text-[28px] xl:text-[24px] lg:text-[20px] xs:text-[20px] mt-[3%] ml-[5%]"
     >
       Jozko
     </h3>
     <h3
-      class="text-anthony-black font-semibold 2xl:text-[28px] xl:text-[24px] lg:text-[20px] mt-[-1%] ml-[5%]"
+      class="text-anthony-black font-semibold 2xl:text-[28px] xl:text-[24px] lg:text-[20px] xs:text-[20px] mt-[-1%] ml-[5%]"
     >
       vodic
     </h3>
