@@ -1,6 +1,12 @@
 <template>
-  <form ref="form" class="flex flex-col lg:w-[80%] font-sans" v-if="!clicked">
-    <div class="xs:mx-auto lg:mx-0 lg:mr-[10%]">
+  <form
+    ref="form"
+    class="flex flex-col lg:w-[80%] xs:w-full font-sans"
+    v-if="!clicked"
+  >
+    <div
+      class="xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0 lg:mr-[10%] xs:w-full"
+    >
       <label for="lname" class="font-[600] mb-[1%]">Meno a priezvisko</label>
       <input
         type="text"
@@ -12,7 +18,9 @@
       />
     </div>
     <div class="flex xs:flex-col lg:flex-row mt-[2%] justify-content-between">
-      <div class="lg:w-[45%] xs:mx-auto lg:mx-0">
+      <div
+        class="lg:w-[45%] xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0 lg:mx-0 xs:w-full"
+      >
         <label for="name" class="font-[600] mb-[1%]">Email</label>
         <input
           required
@@ -33,7 +41,9 @@
           Nesprávny formát e-mailovej adresy
         </div>
       </div>
-      <div class="w-[45%]">
+      <div
+        class="lg:w-[45%] xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0 lg:mx-0"
+      >
         <label for="name" class="font-[600] mb-[1%]">Telefonne cislo</label>
         <input
           required
@@ -46,8 +56,10 @@
         />
       </div>
     </div>
-    <div class="flex flex-row mt-[2%] justify-content-between">
-      <div class="w-[45%]">
+    <div class="flex xs:flex-col lg:flex-row mt-[2%] justify-content-between">
+      <div
+        class="lg:w-[45%] xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0 lg:mx-0"
+      >
         <label for="lname" class="font-[600] mb-[1%]">Mesto odvozu</label>
         <input
           type="text"
@@ -58,20 +70,24 @@
           class="block bg-white w-full border-[1.5px] shadow-sm focus:outline-none focus:ring-1 py-[2%] pl-[10px]"
         />
       </div>
-      <div class="w-[45%]">
+      <div
+        class="lg:w-[45%] xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0"
+      >
         <label for="lname" class="font-[600] mb-[1%]">Adresa odvozu</label>
         <input
           type="text"
           id="cityDep"
           name="cityDep"
           placeholder="Adresa odvozu"
-          v-model="cityDep"
+          v-model="addDep"
           class="block bg-white w-full border-[1.5px] shadow-sm focus:outline-none focus:ring-1 py-[2%] pl-[10px]"
         />
       </div>
     </div>
-    <div class="flex flex-row mt-[2%] justify-content-between">
-      <div class="w-[45%]">
+    <div class="flex xs:flex-col lg:flex-row mt-[2%] justify-content-between">
+      <div
+        class="lg:w-[45%] xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0"
+      >
         <label for="lname" class="font-[600] mb-[1%]">Mesto privozu</label>
         <input
           type="text"
@@ -82,7 +98,9 @@
           class="block bg-white w-full border-[1.5px] shadow-sm focus:outline-none focus:ring-1 py-[2%] pl-[10px]"
         />
       </div>
-      <div class="w-[45%]">
+      <div
+        class="lg:w-[45%] xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0"
+      >
         <label for="lname" class="font-[600] mb-[1%]">Adresa privozu</label>
         <input
           type="text"
@@ -94,15 +112,17 @@
         />
       </div>
     </div>
-    <label for="lname" class="font-[600] mt-[2%] mb-[1%]">Správa</label>
-    <textarea
-      type="text"
-      id="lname"
-      name="lastname"
-      placeholder="Správa"
-      v-model="message"
-      class="block bg-white w-full shadow-sm focus:outline-none focus:ring-1 pl-[10px] pt-[1%] pb-[3%]"
-    />
+    <div class="xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0">
+      <label for="lname" class="font-[600] mt-[2%] mb-[1%]">Správa</label>
+      <textarea
+        type="text"
+        id="lname"
+        name="lastname"
+        placeholder="Správa"
+        v-model="message"
+        class="block bg-white w-full shadow-sm focus:outline-none focus:ring-1 pl-[10px] pt-[1%] pb-[3%]"
+      />
+    </div>
     <div class="mt-[2%]">
       <input type="checkbox" id="horns" name="horns" v-model="checkBox" />
       <label for="horns" class="mt-[2%]">&nbsp;Súhlasim so&nbsp;</label>

@@ -80,52 +80,56 @@
       </div>
     </div>
   </nav>
-  <section class="grad h-[931px] mt-[-20%]">
+  <section
+      id="About" class="grad xs:h-[420px] xsm:h-[520px] lg:h-[800px] xl:h-[931px] mt-[-20%]  overflow-hidden">
     <div class="flex flex-row ml-[9.5%]">
       <div class="mt-[24%]">
         <img
-          class="xs:block lg:hidden"
+          class="xs:block sm:hidden mt-[25%]"
           src="@/assets/objects/dash_mobile.svg"
         />
-        <img class="xs:hidden lg:block" src="@/assets/objects/dash.svg" />
+        <img class="xs:hidden sm:block sm:mt-[5%] md:mt-0" src="@/assets/objects/dash.svg" />
       </div>
       <div class="xs:mx-[6%] lg:mx-[2%] mt-[24%]">
         <img
-          class="xs:block lg:hidden"
+          class="xs:block sm:hidden mt-[25%] w-[100%]"
           src="@/assets/objects/dash_mobile.svg"
         />
-        <img class="xs:hidden lg:block" src="@/assets/objects/dash.svg" />
+        <img class="xs:hidden sm:block sm:mt-[5%] md:mt-0" src="@/assets/objects/dash.svg" />
       </div>
       <div  class="mt-[24%]">
         <img
-          class="xs:block lg:hidden"
+          class="xs:block sm:hidden mt-[25%]"
           src="@/assets/objects/dash_mobile.svg"
         />
-        <img class="xs:hidden lg:block" src="@/assets/objects/dash.svg" />
+        <img class="xs:hidden sm:block sm:mt-[5%] md:mt-0" src="@/assets/objects/dash.svg" />
       </div>
     </div>
     <div
-      class="flex-col text-anthony-white font-bold font-sans ml-[9.5%] xs:mt-[5%] lg:mt-[2%]"
+      class="flex-col text-anthony-white font-bold font-sans ml-[9.5%] xs:mt-[5%] xsm:mt-[2%] lg:mt-[2%]"
     >
-      <h1 class="xs:text-base 2xl:text-5xl xl:text-4xl lg:text-3xl">
+      <h1 class="xs:text-[25px] xsm:text-[30px] 2xl:text-5xl xl:text-4xl lg:text-3xl">
         Medzinarodna a
       </h1>
       <h1
-        class="xs:text-base 2xl:text-5xl xl:text-4xl lg:text-3xl xs:mt-[-4%] lg:mt-0 xs:mb-[-2%] lg:mb-0"
+        class="xs:text-[25px] xsm:text-[30px] 2xl:text-5xl xl:text-4xl lg:text-3xl xs:mb-[-1%] xs:mt-[-3%] xsm:mb-0 xsm:mt-[-1%]"
       >
         vnutrostatna
       </h1>
-      <h1 class="xs:text-base 2xl:text-5xl xl:text-4xl lg:text-3xl">
+      <h1 class="xs:text-[25px] xsm:text-[30px] 2xl:text-5xl xl:text-4xl lg:text-3xl">
         preprava
       </h1>
     </div>
+    <div class="xs:w-[95%] xs:mt-[-12%] xsm:mt-[-18%] lg:mt-[-20%] lg:w-[80%] xl:mt-[-22%] 2xl:mt-[-23%] xl:w-[70%] 2xl:w-[72%] xs:ml-[30%] xsm:ml-[35%] lg:ml-[40%]">
+      <img src="@/assets/kamion.png">
+    </div>
   </section>
-  <section id="About" class="2xl:h-[400px] xl:h-[320px] lg:h-[300px] bg-black">
-    <div class="">
+  <section class="2xl:h-[450px] xl:h-[320px] lg:h-[300px] xs:h-[520px] xsm:h-[450px] bg-black">
+    <div class="2xl:pt-[5%] xs:pt-[5%]">
       <img src="@/assets/objects/red_dash.svg" class="dash-center" />
     </div>
     <div
-      class="flex xs:flex-col lg:flex-row class 2xl:text-xl xl:text-lg lg:text-base text-anthony-white justify-content-around xs:ml-[12%] lg:ml-0 xs:mr-[5%] lg:mr-0 lg:mx-[12%] xs:mt-[8%] lg:mt-[3%]"
+      class="flex xs:flex-col lg:flex-row class 2xl:text-xl xl:text-lg lg:text-base text-anthony-white justify-content-around xs:ml-[12%] lg:ml-0 xs:mr-[5%] lg:mr-0 lg:mx-[12%] xs:mt-[10%] lg:mt-[5%]"
     >
       <AboutComponent />
     </div>
@@ -133,14 +137,14 @@
 
   <section
     id="Services"
-    class="bg-anthony-white mt-[5%] xl:h-[790px] lg:h-[730px] flex xs:flex-col lg:flex-row lg:justify-content-center lg:pl-[5%]"
+    class="bg-anthony-white mt-[5%] xl:h-[790px] lg:h-[730px] flex xs:flex-col lg:flex-row lg:justify-evenly lg:justify-content-center lg:ml-[10%] lg:mr-[5%]"
   >
     <OfferComponent />
   </section>
   <section
     @scroll="handleScroll()"
     id="Team"
-    class="bg-anthony-white-darker xl:h-[1284px] lg:h-[1100px] flex flex-col px-[5%]"
+    class="bg-anthony-white-darker xl:h-[1284px] lg:h-[1100px] xs:h-[1500px] flex flex-col px-[5%]"
   >
     <CareerComponent />
   </section>
@@ -252,7 +256,6 @@ export default {
       this.teamEnd = document
         .getElementById("Team")
         .getBoundingClientRect().bottom;
-      console.log(this.teamStart);
     },
     onScroll() {
       const currentScrollPosition =
@@ -354,13 +357,48 @@ export default {
     );
   }
 }
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 400px) {
   .bg-color {
     background: linear-gradient(
       180deg,
       #bc0000 0%,
-      #b80000 44.75%,
-      #9a0000 99.99%
+      #b80000 44.75%
+    );
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 500px) {
+  .bg-color {
+    background: linear-gradient(
+        180deg,
+        #bc0000 0%,
+        #b90000 44.75%
+    );
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 600px) {
+  .bg-color {
+    background: linear-gradient(
+        180deg,
+        #bc0000 0%,
+        #b30000 44.75%
+    );
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .bg-color {
+    background: linear-gradient(
+        180deg,
+        #bc0000 0%,
+        #b30000 44.75%
+    );
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .bg-color {
+    background: linear-gradient(
+        180deg,
+        #bc0000 0%,
+        #b30000 44.75%
     );
   }
 }
