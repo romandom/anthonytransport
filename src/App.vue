@@ -15,7 +15,7 @@
         src="@/assets/logo_white.svg"
       />
     </div>
-    <div class="xs:flex xs:flex-col lg:hidden mt-[10%] mr-[5%]">
+    <div @click="this.menu? this.menu = false : this.menu = true" class="xs:flex xs:flex-col lg:hidden mt-[10%] mr-[5%] hover:cursor-pointer">
       <img src="@/assets/objects/menu_line.svg" />
       <img class="my-[15%]" src="@/assets/objects/menu_line.svg" />
       <img src="@/assets/objects/menu_line.svg" />
@@ -80,6 +80,9 @@
       </div>
     </div>
   </nav>
+  <section v-if="this.menu">
+  <MobileMenu />
+  </section>
   <section
       id="About" class="grad xs:h-[420px] xsm:h-[520px] lg:h-[800px] xl:h-[931px] mt-[-20%]  overflow-hidden">
     <div class="flex flex-row ml-[9.5%]">
@@ -144,11 +147,11 @@
   <section
     @scroll="handleScroll()"
     id="Team"
-    class="bg-anthony-white-darker xl:h-[1284px] lg:h-[1100px] xs:h-[1500px] flex flex-col px-[5%]"
+    class="bg-anthony-white-darker xl:h-[1284px] lg:h-[1100px] xs:h-[1400px] xsm:h-[1600px] sm:h-[1800px] md:h-[2000px] flex flex-col px-[5%]"
   >
     <CareerComponent />
   </section>
-  <section id="Vehicles" class="bg-anthony-white h-[969px] flex flex-col">
+  <section id="Vehicles" class="bg-anthony-white xs:h-[700px] xsm:h-[800px] lg:h-[969px] flex flex-col">
     <VehiclesComponent />
   </section>
   <section
@@ -180,10 +183,12 @@ import ContactComponent from "@/components/ContactComponent";
 import VehiclesComponent from "@/components/VehiclesComponent";
 import OfferComponent from "@/components/OfferComponent";
 import AboutComponent from "@/components/AboutComponent";
+import MobileMenu from "@/components/mobileMenu";
 
 export default {
   name: "App",
   components: {
+    MobileMenu,
     AboutComponent,
     OfferComponent,
     VehiclesComponent,
@@ -211,6 +216,7 @@ export default {
       vehicles: false,
       vehiclesStart: 0,
       vehiclesEnd: 0,
+      menu: false,
     };
   },
   created() {

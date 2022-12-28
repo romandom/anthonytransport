@@ -20,7 +20,7 @@
     </h2>
   </div>
   <div
-    class="flex xs:flex-col lg:flex-row justify-content-evenly mt-[7%] font-sans"
+    class="flex xs:flex-col lg:flex-row justify-content-evenly mt-[7%] xs:mx-[5%] xsm:mx-[10%] sm:mx-[15%] md:mx-[20%] font-sans"
   >
     <CardComponent class="xs:mb-[20%] lg:mb-0" />
     <CardComponent />
