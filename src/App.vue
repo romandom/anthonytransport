@@ -1,24 +1,26 @@
 <link rel="stylesheet" href="main.css">
 <template>
   <nav
-    class="sticky-top flex flex-row bg-color xs:justify-between lg:justify-start"
+    class="sticky-top "
   >
-    <div class="mt-[7%] ml-[5%] xs:w-[60%] lg:w-[45%]">
+    <div class="flex flex-row bg-color xs:justify-between lg:justify-start">
+    <div class="xs:mt-[7%] sm:mt-[4%] lg:mt-[7%] ml-[5%] xs:w-[60%] sm:w-[45%] md:w-[40%] lg:w-[45%]">
       <img
         id="logo"
         class="w-[100%]"
         :class="
           this.shrink
-            ? 'lg:scale-[0.35] lg:transition lg:duration-1000 lg:translate-y-[-80%] lg:translate-x-[-25%]'
-            : 'lg:scale-100 lg:transition lg:duration-1000'
+            ? 'xs:scale-[0.8] xs:translate-y-[-20%] xs:translate-x-[-10%] lg:scale-[0.35] transition duration-1000 lg:translate-y-[-80%] lg:translate-x-[-25%]'
+            : 'scale-100 transition duration-1000'
         "
         src="@/assets/logo_white.svg"
       />
     </div>
-    <div @click="this.menu? this.menu = false : this.menu = true" class="xs:flex xs:flex-col lg:hidden mt-[10%] mr-[5%] hover:cursor-pointer">
-      <img src="@/assets/objects/menu_line.svg" />
-      <img class="my-[15%]" src="@/assets/objects/menu_line.svg" />
-      <img src="@/assets/objects/menu_line.svg" />
+    <div @click="this.menu? this.menu = false : this.menu = true" :class="
+          this.shrink? 'xs:scale-[0.8] transition duration-1000 translate-y-[-20%]': 'xs:scale-100 transition duration-1000'" class="xs:flex xs:flex-col lg:hidden xs:mt-[10%] sm:mt-[7%] lg:mt-[10%] mr-[5%] hover:cursor-pointer">
+      <div class="w-[45px] h-[5px] bg-anthony-white"></div>
+      <div class="w-[45px] h-[5px] bg-anthony-white my-[10px]"></div>
+      <div class="w-[45px] h-[5px] bg-anthony-white"></div>
     </div>
     <div
       class="lg:flex flex-row 2xl:text-3xl xl:text-2xl lg:text-xl text-anthony-white font-semibold gap-4 mt-[2%] w-[50%] lg:ml-[-15%] xs:hidden"
@@ -42,7 +44,7 @@
         :class="team ? 'underline' : ''"
         @click="scroll('Team')"
       >
-        NAS TYM
+        NAS TIM
       </div>
       <div
         class="hover:cursor-pointer"
@@ -79,12 +81,14 @@
         />
       </div>
     </div>
+      </div>
+    <div class="bg-color md:hidden" v-if="this.menu">
+      <MobileMenu />
+    </div>
   </nav>
-  <section v-if="this.menu">
-  <MobileMenu />
-  </section>
+
   <section
-      id="About" class="grad xs:h-[420px] xsm:h-[520px] lg:h-[800px] xl:h-[931px] mt-[-20%]  overflow-hidden">
+      id="About" class="grad xs:h-[420px] xsm:h-[520px] sm:h-[600px] md:h-[700px] lg:h-[800px] xl:h-[931px] mt-[-20%]  overflow-hidden">
     <div class="flex flex-row ml-[9.5%]">
       <div class="mt-[24%]">
         <img
@@ -399,12 +403,21 @@ export default {
     );
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 800px) {
   .bg-color {
     background: linear-gradient(
         180deg,
         #bc0000 0%,
         #b30000 44.75%
+    );
+  }
+}
+@media only screen and (min-width: 850px) and (max-width: 1024px) {
+  .bg-color {
+    background: linear-gradient(
+        180deg,
+        #bc0000 0%,
+        #a50000 44.75%
     );
   }
 }
