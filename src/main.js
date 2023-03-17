@@ -12,6 +12,19 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue-3/dist/bootstrap-vue-3.css";
 
 const app = createApp(App);
+
+app.config.globalProperties = {
+  lang: "SK",
+  changeLang(str) {
+    if (this.lang != str && this.lang == "SK") {
+      this.lang = "EN";
+    } else if (this.lang != str && this.lang == "EN") {
+      this.lang = "SK";
+    }
+    return str.slice(0, 1).toUpperCase() + str.slice(1);
+  },
+};
+
 app
   .use(VueGoogleMaps, {
     load: {

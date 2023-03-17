@@ -30,28 +30,28 @@
         :class="about ? 'underline' : ''"
         @click="scroll('About')"
       >
-        O NAS
+        O NÁS
       </div>
       <div
         class="hover:cursor-pointer"
         :class="services ? 'underline' : ''"
         @click="scroll('Services')"
       >
-        SLUZBY
+        SLUŽBY
       </div>
       <div
         class="hover:cursor-pointer"
         :class="team ? 'underline' : ''"
         @click="scroll('Team')"
       >
-        NAS TIM
+        NÁŠ TÝM
       </div>
       <div
         class="hover:cursor-pointer"
         :class="vehicles ? 'underline' : ''"
         @click="scroll('Vehicles')"
       >
-        GARAZ
+        GARÁŽ
       </div>
       <div
         class="hover:cursor-pointer"
@@ -65,13 +65,17 @@
       <div>
         <img
           class="hover:cursor-pointer hover:border-2 hover:rounded-md"
+          :class="lang === 'SK'? 'border-2 rounded-md': ''"
           src="@/assets/flags/slovak.svg"
+          @click="changeLang('EN')"
         />
       </div>
-      <div>
+      <div
+          @click="changeLang('SK')">
         <img
           class="hover:cursor-pointer hover:border-2 hover:rounded-md"
           src="@/assets/flags/english.svg"
+          :class="lang === 'EN'? 'border-2 rounded-md': ''"
         />
       </div>
       <div class="hover:cursor-pointer">
@@ -82,7 +86,7 @@
       </div>
     </div>
       </div>
-    <div class="bg-color md:hidden" v-if="this.menu">
+    <div class="bg-color lg:hidden" v-if="this.menu">
       <MobileMenu />
     </div>
   </nav>
@@ -116,12 +120,12 @@
       class="flex-col text-anthony-white font-bold font-sans ml-[9.5%] xs:mt-[5%] xsm:mt-[2%] lg:mt-[2%]"
     >
       <h1 class="xs:text-[25px] xsm:text-[30px] 2xl:text-5xl xl:text-4xl lg:text-3xl">
-        Medzinarodna a
+        Medzinárodná a
       </h1>
       <h1
         class="xs:text-[25px] xsm:text-[30px] 2xl:text-5xl xl:text-4xl lg:text-3xl xs:mb-[-1%] xs:mt-[-3%] xsm:mb-0 xsm:mt-[-1%]"
       >
-        vnutrostatna
+        vnútroštátna
       </h1>
       <h1 class="xs:text-[25px] xsm:text-[30px] 2xl:text-5xl xl:text-4xl lg:text-3xl">
         preprava
@@ -167,9 +171,9 @@
       class="flex flex-col xs:w-[100%] lg:w-[40%] xs:text-center lg:text-start lg:ml-[8%] mt-[15%]"
     >
       <h4
-        class="2xl:text-[35px] xl:text-[30px] lg:text-[25px] xs:text-[22px] mb-[6%]"
+        class="2xl:text-[35px] xl:text-[30px] lg:text-[25px] xs:text-[22px] sm:text-[40px] mb-[6%]"
       >
-        Formular <span class="text-anthony-red">nezavazneho dopytu</span>
+        Formulár <span class="text-anthony-red">nezáväzného dopytu</span>
       </h4>
       <div class="flex flex-row justify-between">
         <FormComponent />
@@ -403,7 +407,7 @@ export default {
     );
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 800px) {
+@media only screen and (min-width: 768px) and (max-width: 850px) {
   .bg-color {
     background: linear-gradient(
         180deg,

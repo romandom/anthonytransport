@@ -13,17 +13,17 @@
       <h3
         class="2xl:text-[20px] xl:text-[16px] lg:text-[12px] footer-center text-center"
       >
-        Prepravne podmienky
+        Prepravné podmienky
       </h3>
       <h3
         class="2xl:text-[20px] xl:text-[16px] lg:text-[12px] footer-center text-center"
       >
-        Zmluvne podmienky
+        Zmluvné podmienky
       </h3>
       <h3
         class="2xl:text-[20px] xl:text-[16px] lg:text-[12px] footer-center text-center"
       >
-        Prepravny certifikat
+        Prepravnyý certifikát
       </h3>
     </div>
   </section>

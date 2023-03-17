@@ -1,18 +1,16 @@
 <template>
   <div class="xs:w-[100%] lg:w-[35%] font-sans text-white">
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      <br /><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-      finibus nibh diam, vel imperdiet magna pellentesque ut. Phasellus
-      tristique, ligula at eleifend aliquam, diam ipsum rutrum massa
+      Sme slovenská dopravná spoločnosť a zaoberáme sa vnútroštátnou nákladnou
+      cestnou dopravou a medzinárodnou cestnou nákladnou dopravou.
     </p>
   </div>
   <div class="xs:w-[100%] lg:w-[35%] font-sans text-white">
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      <br /><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-      finibus nibh diam, vel imperdiet magna pellentesque ut. Phasellus
-      tristique, ligula at eleifend aliquam, diam ipsum rutrum massa
+      Na trhu pôsobíme od decembra 2011. Naše sídlo sa nachádza na východnom
+      Slovensku v meste Trebišov. Hlavným zámerom ANTHONY TRANSPORT s.r.o je
+      preprava komodít, krmovín a paletového tovaru. Sme držiteľom certifikátu
+      GMP+B4.
     </p>
   </div>
 </template>

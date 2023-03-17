@@ -3,10 +3,10 @@
     <div
       class="flex flex-col text-white ml-[13%] pt-[3%] xs:text-[20px] font-sans font-medium"
     >
-      <p class="hover:cursor-pointer">O NAS</p>
-      <p class="hover:cursor-pointer">SLUZBY</p>
-      <p class="hover:cursor-pointer">NAS TIM</p>
-      <p class="hover:cursor-pointer">GARAZ</p>
+      <p class="hover:cursor-pointer">O NÁS</p>
+      <p class="hover:cursor-pointer">SLUŽBY</p>
+      <p class="hover:cursor-pointer">NÁŠ TÝM</p>
+      <p class="hover:cursor-pointer">GARÁŽ</p>
       <p class="hover:cursor-pointer">KONTAKT</p>
     </div>
     <div

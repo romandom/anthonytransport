@@ -12,7 +12,7 @@
         <h5
           class="2xl:text-[25px] xl:text-[22px] lg:text-[22px] xs:text-[22px] xs:mt-[2%] lg:mt-0 text-anthony-red"
         >
-          Kontaktna osoba
+          Kontaktná osoba
         </h5>
         <h6
           class="2xl:text-[20px] xl:text-[16px] lg:text-[16px] xs:text-[16px] lg:mt-[5%]"
@@ -44,7 +44,7 @@
       </div>
     </div>
     <GMapMap
-      class="mt-[5%] 2xl:w-[600px] xl:w-[520px] lg:w-[416px] 2xl:h-[400px] xl:h-[350px] lg:h-[280px] xs:h-[200px]"
+      class="mt-[5%] 2xl:w-[600px] xl:w-[520px] lg:w-[416px] 2xl:h-[400px] xl:h-[350px] lg:h-[280px] xs:h-[200px] sm:h-[350px] sm:mx-[5%] lg:mx-0"
       :center="center"
       :zoom="15"
       map-type-id="terrain"

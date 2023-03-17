@@ -1,5 +1,4 @@
 <template>
-  <!--<div class="w-[424px] h-[434px] bg-anthony-white shadow"></div>-->
   <div
     class="2xl:w-[499px] xl:w-[399px] lg:w-[319px] 2xl:h-[511px] xl:h-[408px] lg:h-[326px] bg-anthony-white shadow font-sans"
   >

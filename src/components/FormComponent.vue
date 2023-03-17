@@ -42,9 +42,9 @@
         </div>
       </div>
       <div
-        class="lg:w-[45%] xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0 lg:mx-0"
+        class="lg:w-[45%] xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0 lg:mx-0 xs:mt-[2%] lg:mt-0"
       >
-        <label for="name" class="font-[600] mb-[1%]">Telefonne cislo</label>
+        <label for="name" class="font-[600] mb-[1%]">Telefónne číslo</label>
         <input
           required
           type="text"
@@ -71,7 +71,7 @@
         />
       </div>
       <div
-        class="lg:w-[45%] xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0"
+        class="lg:w-[45%] xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0 xs:mt-[2%] lg:mt-0"
       >
         <label for="lname" class="font-[600] mb-[1%]">Adresa odvozu</label>
         <input
@@ -99,7 +99,7 @@
         />
       </div>
       <div
-        class="lg:w-[45%] xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0"
+        class="lg:w-[45%] xs:px-[5%] xsm:px-[10%] sm:px-[20%] md:px-[25%] lg:px-0 xs:mt-[2%] lg:mt-0"
       >
         <label for="lname" class="font-[600] mb-[1%]">Adresa privozu</label>
         <input
@@ -133,7 +133,7 @@
     <div class="w-[100%] mt-[5%]">
       <button
         @click="sendEmail()"
-        class=""
+        class="button"
         :disabled="
           !(
             this.name.length > 0 &&
@@ -212,4 +212,24 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.button {
+  background-color: white;
+  color: black;
+  padding: 3px 20px;
+  border: 1px solid black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+</style>
