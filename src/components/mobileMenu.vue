@@ -1,6 +1,7 @@
 <template>
   <div class="flex flex-col">
     <div
+      v-if="$route.path == '/SK'"
       class="flex flex-col text-white ml-[13%] pt-[3%] xs:text-[20px] font-sans font-medium"
     >
       <p class="hover:cursor-pointer">O NÁS</p>
@@ -8,6 +9,16 @@
       <p class="hover:cursor-pointer">NÁŠ TÝM</p>
       <p class="hover:cursor-pointer">GARÁŽ</p>
       <p class="hover:cursor-pointer">KONTAKT</p>
+    </div>
+    <div
+      v-if="$route.path == '/EN'"
+      class="flex flex-col text-white ml-[13%] pt-[3%] xs:text-[20px] font-sans font-medium"
+    >
+      <p class="hover:cursor-pointer">ABOUT</p>
+      <p class="hover:cursor-pointer">SERVICES</p>
+      <p class="hover:cursor-pointer">OUR TEAM</p>
+      <p class="hover:cursor-pointer">VEHICLES</p>
+      <p class="hover:cursor-pointer">CONTACT</p>
     </div>
     <div
       class="flex flex-row justify-content-center gap-[10%] w-full mt-[3%] mb-[5%]"

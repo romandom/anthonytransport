@@ -8,6 +8,7 @@
       © Anthony Transport
     </h2>
     <div
+      v-if="$route.path == '/SK'"
       class="flex xs:flex-col lg:flex-row text-anthony-white underline mr-[2.5%] xs:gap-[10px] lg:gap-[5%] lg:justify-content-between xs:w-full lg:w-[45%] footer-center"
     >
       <h3
@@ -24,6 +25,26 @@
         class="2xl:text-[20px] xl:text-[16px] lg:text-[12px] footer-center text-center"
       >
         Prepravnyý certifikát
+      </h3>
+    </div>
+    <div
+      v-if="$route.path == '/EN'"
+      class="flex xs:flex-col lg:flex-row text-anthony-white underline mr-[2.5%] xs:gap-[10px] lg:gap-[5%] lg:justify-content-between xs:w-full lg:w-[45%] footer-center"
+    >
+      <h3
+        class="2xl:text-[20px] xl:text-[16px] lg:text-[12px] footer-center text-center"
+      >
+        Transport conditions
+      </h3>
+      <h3
+        class="2xl:text-[20px] xl:text-[16px] lg:text-[12px] footer-center text-center"
+      >
+        Terms and conditions
+      </h3>
+      <h3
+        class="2xl:text-[20px] xl:text-[16px] lg:text-[12px] footer-center text-center"
+      >
+        Transport certificate
       </h3>
     </div>
   </section>
